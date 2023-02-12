@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Document</title>
+
+  <style>
+    .parent-block {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="parent-block">
+
+    <section class="form-card">
+      <div class="form-card__close">
+        <span></span>
+      </div>
+      <div class="container">
+        <h2 class="form-card__title">добавить товар</h2>
+        <form class="form-card__form" action="https://jsonplaceholder.typicode.com/posts" method="POST" target="_blank">
+          <div class="form-card__body">
+            <label class="form-card__label" for="name">наименование</label>
+            <input class="form-card__input" id="name" name="name" type="text" required>
+
+            <label class="form-card__label" for="category">категория</label>
+            <input class="form-card__input" id="category" name="category" type="text" required>
+
+            <label class="form-card__label" for="measurements">eдиницы измерения</label>
+            <input class="form-card__input" id="measurements" name="measurements" type="text" required>
+
+            <div class="form-card__custom">
+              <div class="form-card__custom-checkbox">
+                <div class="form-card__discount">
+                  <input class="form-card__checkbox" id="discount" name="discount" type="checkbox" required>
+                  <label class="form-card__label" for="discount">дисконт</label>
+                </div>
+                <div class="form-card__discount">
+                  <input class="form-card__input" id="commit" name="commit" type="text" required>
+                </div>
+              </div>
+            </div>
+
+            <label class="form-card__label" for="description">описание</label>
+            <input class="form-card__input form-card__input_description" id="description" name="description" type="text"
+              required>
+
+            <label class="form-card__label" for="count">количество</label>
+            <input class="form-card__input" id="count" name="count" type="number" min="0" required>
+
+            <label class="form-card__label" for="price">цена</label>
+            <input class="form-card__input" id="price" name="price" type="number" min="0" required>
+          </div>
+
+          <div class="form-card__btn">
+            <button class="form-card__submit">добавить товар</button>
+          </div>
+
+        </form>
+
+      </div>
+    </section>
+
+  </div>
+</body>
+
+</html>
