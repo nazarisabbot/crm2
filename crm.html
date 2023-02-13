@@ -28,13 +28,13 @@
   <div class="parent-block">
 
     <section class="form-card">
-      <div class="form-card__close">
+      <button class="form-card__close" type="button">
         <span></span>
-      </div>
+      </button>
       <div class="container">
         <h2 class="form-card__title">добавить товар</h2>
         <form class="form-card__form" action="https://jsonplaceholder.typicode.com/posts" method="POST" target="_blank">
-          <div class="form-card__body">
+          <fieldset class="form-card__body">
             <label class="form-card__label" for="name">наименование</label>
             <input class="form-card__input" id="name" name="name" type="text" required>
 
@@ -44,17 +44,13 @@
             <label class="form-card__label" for="measurements">eдиницы измерения</label>
             <input class="form-card__input" id="measurements" name="measurements" type="text" required>
 
-            <div class="form-card__custom">
-              <div class="form-card__custom-checkbox">
-                <div class="form-card__discount">
-                  <input class="form-card__checkbox" id="discount" name="discount" type="checkbox" required>
-                  <label class="form-card__label" for="discount">дисконт</label>
-                </div>
-                <div class="form-card__discount">
-                  <input class="form-card__input" id="commit" name="commit" type="text" required>
-                </div>
-              </div>
-            </div>
+            <fieldset class="form-card__custom">
+              <fieldset class="form-card__custom-checkbox">
+                <input class="form-card__checkbox" id="discount" name="discount" type="checkbox" required>
+                <label class="form-card__label" for="discount">дисконт</label>
+                <input class="form-card__input form-card__input_commit" id="commit" name="commit" type="text" required>
+              </fieldset>
+            </fieldset>
 
             <label class="form-card__label" for="description">описание</label>
             <input class="form-card__input form-card__input_description" id="description" name="description" type="text"
@@ -65,11 +61,11 @@
 
             <label class="form-card__label" for="price">цена</label>
             <input class="form-card__input" id="price" name="price" type="number" min="0" required>
-          </div>
+          </fieldset>
 
-          <div class="form-card__btn">
-            <button class="form-card__submit">добавить товар</button>
-          </div>
+          <button class="form-card__btn" type="submit">
+            <span class="form-card__submit">добавить товар</span>
+          </button>
 
         </form>
 
