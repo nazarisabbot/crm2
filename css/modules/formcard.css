@@ -139,6 +139,7 @@
 .form-card__btn {
   align-self: flex-end;
   padding-right: 28px;
+  background: transparent;
 }
 
 .form-card__submit {
