@@ -1,15 +1,36 @@
+.form {
+  /* display: none; */
+  width: 100%;
+  height: 100vh;
+}
+
 .form-card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 792px;
-  padding: 40px 10px 40px 10px;
-  transform: translate(-50%, -50%);
+  margin-top: 30%;
+  width: 100%;
+  padding: 104px 106px;
   background-color: var(--background-color);
 }
 
 .form-card__title {
+  position: relative;
+  height: 70px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center end;
   margin-bottom: 44px;
+}
+
+.form-card__title::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  background-color: var(--text-color);
+}
+
+.form-card__action {
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -19,34 +40,14 @@
 }
 
 .form-card__close {
-  position: absolute;
-  top: 32px;
-  right: 28px;
-  height: 25px;
-  width: 25px;
+  background-image: url("../../img/cross.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   background-color: transparent;
-}
-
-.form-card__close::before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  right: 0;
-  height: 2px;
-  width: 100%;
-  background-color: var(--text-color);
-  transform: rotate(45deg);
-}
-
-.form-card__close > span {
-  position: absolute;
-  top: 0;
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: var(--text-color);
-  transform: rotate(-45deg);
 }
 
 .form-card__form {
@@ -60,11 +61,19 @@
 }
 
 .form-card__body {
+  display: grid;
+  grid: auto / repeat(2, 1fr);
+  column-gap: 24px;
   padding: 30px;
   margin-bottom: 32px;
   background-color: var(--white-color);
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+}
+
+.form-card__right {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .form-card__label {
@@ -81,6 +90,10 @@
   background-color: var(--background-color);
   border-radius: 5px;
   border-color: transparent;
+}
+
+.form-card__input_margin  {
+  margin-bottom: 25px;
 }
 
 .form-card__input:focus {
@@ -129,7 +142,7 @@
   position: absolute;
   top: 22px;
   right: 0;
-  width: 468px;
+  width: 80%;
 }
 
 .form-card__input_description {
@@ -137,7 +150,6 @@
 }
 
 .form-card__btn {
-  align-self: flex-end;
   padding-right: 28px;
   background: transparent;
 }
@@ -152,4 +164,54 @@
   background-color: var(--button-color);
   color: var(--background-color);
   border-radius: 6px;
+}
+
+.form-card__add {
+  padding: 10px 25px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  background-color: var(--button-color);
+  color: var(--background-color);
+  border-radius: 6px;
+}
+
+.form-card__total {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+}
+
+.form-card__count {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: none;
+  color: var(--text-color);
+}
+
+.form-card__count > span {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--button-color);
+}
+
+@media (max-width: 768px) {
+  .form-card__body {
+    grid: auto / 1fr;
+  }
+
+  .form-card__total {
+    height: 100px;
+    grid: auto / 1fr;
+    row-gap: 35px;
+    justify-items: center;
+  }
+
+  .form-card {
+    padding: 54px 56px;
+  }
 }
