@@ -2,7 +2,11 @@
 .tab__form {
   width: 100%;
   height: 100%;
+}
+
+.wrapper {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
 .form-card__title_tab {
@@ -103,13 +107,16 @@
 }
 
 /* Table block */
+.scroll {
+  overflow-x: auto;
+}
+
 .board {
-  width: 100%; 
+  min-width: 1100px; 
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
   color: var(--txt-filter);
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 .board__header {
@@ -152,13 +159,13 @@
 
 .tab__footer {
   height: 45px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   border-radius: 0 0 8px 8px;
   padding-right: 18px;
   display: grid;
   grid-template-columns: 3fr 0.3fr 0.3fr;
   align-items: center;
   justify-items: end;
+  column-gap: 20px;
 }
 
 .tab__show {
@@ -210,12 +217,14 @@
 .tab__prev {
   display: flex;
   flex: 0 0 50%;
+  background-color: transparent;
 }
 
 .tab__next {
   display: flex;
   justify-content: flex-end;
   flex: 0 0 50%;
+  background-color: transparent;
 }
 
 /* Form card block */
@@ -611,5 +620,13 @@
     display: flex;
     flex-direction: column;
     align-items: end;
+  }
+
+  .tab__footer {
+    height: 100%;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 10px 0 10px 0;
+    row-gap: 10px;
   }
 }
