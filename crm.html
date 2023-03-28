@@ -14,11 +14,27 @@
 
 <body>
   <div class="form">
-    <div class="container">
+    <div class="form-container">
       <section class="form-card">
-        <div class="form-card__title">
+        <div class="form-card__error">
+          <button class="form-card__close" id="closeError" type="button"></button>
+          <div class="form-card__contain">
+            <img class="form-card__redcross" src="img/error_cross.png" width="90" height="90"
+              alt="Крассный крест означающий ошибку">
+            <p>Что-то пошло не так</p>
+          </div>
+        </div>
+        <div class="form-card__title form-card__title_form">
           <h2 class="form-card__action">добавить товар</h2>
-          <button class="form-card__close" type="button"></button>
+          <p class="form-card__id">
+            <span class="form-card__name">
+              id:
+            </span>
+            <span class="form-card__number">
+              201910241
+            </span>
+          </p>
+          <button class="form-card__close" id="closeForm" type="button"></button>
         </div>
         <form class="form-card__form" action="https://jsonplaceholder.typicode.com/posts" method="POST" target="_blank">
 
@@ -43,6 +59,12 @@
                     required>
                 </fieldset>
               </fieldset>
+
+              <fieldset class="form-card__red">
+                <p class="form-card__lemit form-card__lemit_left">
+                  Изображение не должно превышать размер 1 Мб
+                </p>
+              </fieldset>
             </fieldset>
 
 
@@ -59,12 +81,23 @@
                 required>
 
               <button class="form-card__add">Добавить изображение</button>
+
+              <fieldset class="form-card__red">
+                <p class="form-card__lemit form-card__lemit_right">
+                  Изображение не должно превышать размер 1 Мб
+                </p>
+              </fieldset>
+            </fieldset>
+
+            <fieldset class="form-card__product">
+              <div class="form-card__delete"><span></span></div>
+              <img class="form-card__image" src="img/image_01.png" alt="Фото добавляемого товара">
             </fieldset>
 
           </fieldset>
 
-          <fieldset class="form-card__total">
-            <p class="form-card__count">Итоговая стоимость: $ <span>900.0</span></p>
+          <fieldset class="form-card__total form-card__total_form">
+            <p class="form-card__count">Итоговая стоимость: <span>$ 900.0</span></p>
             <button class="form-card__btn" type="submit">
               <span class="form-card__submit">добавить товар</span>
             </button>
@@ -76,6 +109,281 @@
     </div>
 
   </div>
+
+  <div class="container">
+    <div class="form-card__title form-card__title_tab">
+      <h2 class="form-card__action">CMS</h2>
+      <fieldset class="form-card__total form-card__total_tab">
+        <p class="form-card__count">Итоговая стоимость: <span>$ 900.0</span></p>
+      </fieldset>
+    </div>
+
+    <div class="tab">
+      <form class="tab__form" action="https://jsonplaceholder.typicode.com/posts" method="POST" target="_blank">
+        <fieldset class="tab__header">
+          <fieldset class="tab__filter">
+            <button class="tab__button" type="button">Фильтр</button>
+          </fieldset>
+          <fieldset class="tab__search">
+            <label for="property"></label>
+            <input class="tab__input" type="text" name="property" placeholder="Поиск по наименованию и категории">
+          </fieldset>
+          <fieldset class="tab__action">
+            <button class="tab__submit" type="button" id="openForm">Добавить товар</button>
+          </fieldset>
+        </fieldset>
+      </form>
+
+      <table class="tab__board board">
+
+        <thead class="board__header">
+          <tr>
+            <th>ID</th>
+            <th>Наименование</th>
+            <th>Категория</th>
+            <th>ед/изм</th>
+            <th>количество</th>
+            <th>цена</th>
+            <th>ИТОГ</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody class="board__body">
+          <tr>
+            <th scope="row">246016548</th>
+            <td>Навигационная система Soundmax</td>
+            <td>Техника для дома</td>
+            <td>шт</td>
+            <td>5</td>
+            <td>$100</td>
+            <td>$500</td>
+            <td>
+              <button class="board__button board__button_noimage"></button>
+              </button>
+            </td>
+            <td>
+              <button class="board__button board__button_edit"></button>
+            </td>
+            <td>
+              <button class="board__button board__button_delete"></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">246016548</th>
+            <td>Навигационная система Soundmax</td>
+            <td>Техника для дома</td>
+            <td>шт</td>
+            <td>5</td>
+            <td>$100</td>
+            <td>$500</td>
+            <td>
+              <button class="board__button board__button_image"></button>
+              </button>
+            </td>
+            <td>
+              <button class="board__button board__button_edit"></button>
+            </td>
+            <td>
+              <button class="board__button board__button_delete"></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">246016548</th>
+            <td>Навигационная система Soundmax</td>
+            <td>Техника для дома</td>
+            <td>шт</td>
+            <td>5</td>
+            <td>$100</td>
+            <td>$500</td>
+            <td>
+              <button class="board__button board__button_image"></button>
+              </button>
+            </td>
+            <td>
+              <button class="board__button board__button_edit"></button>
+            </td>
+            <td>
+              <button class="board__button board__button_delete"></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">246016548</th>
+            <td>Навигационная система Soundmax</td>
+            <td>Техника для дома</td>
+            <td>шт</td>
+            <td>5</td>
+            <td>$100</td>
+            <td>$500</td>
+            <td>
+              <button class="board__button board__button_image"></button>
+              </button>
+            </td>
+            <td>
+              <button class="board__button board__button_edit"></button>
+            </td>
+            <td>
+              <button class="board__button board__button_delete"></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">246016548</th>
+            <td>Навигационная система Soundmax</td>
+            <td>Техника для дома</td>
+            <td>шт</td>
+            <td>5</td>
+            <td>$100</td>
+            <td>$500</td>
+            <td>
+              <button class="board__button board__button_image"></button>
+              </button>
+            </td>
+            <td>
+              <button class="board__button board__button_edit"></button>
+            </td>
+            <td>
+              <button class="board__button board__button_delete"></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">246016548</th>
+            <td>Навигационная система Soundmax</td>
+            <td>Техника для дома</td>
+            <td>шт</td>
+            <td>5</td>
+            <td>$100</td>
+            <td>$500</td>
+            <td>
+              <button class="board__button board__button_image"></button>
+              </button>
+            </td>
+            <td>
+              <button class="board__button board__button_edit"></button>
+            </td>
+            <td>
+              <button class="board__button board__button_delete"></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">246016548</th>
+            <td>Навигационная система Soundmax</td>
+            <td>Техника для дома</td>
+            <td>шт</td>
+            <td>5</td>
+            <td>$100</td>
+            <td>$500</td>
+            <td>
+              <button class="board__button board__button_image"></button>
+              </button>
+            </td>
+            <td>
+              <button class="board__button board__button_edit"></button>
+            </td>
+            <td>
+              <button class="board__button board__button_delete"></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">246016548</th>
+            <td>Навигационная система Soundmax</td>
+            <td>Техника для дома</td>
+            <td>шт</td>
+            <td>5</td>
+            <td>$100</td>
+            <td>$500</td>
+            <td>
+              <button class="board__button board__button_image"></button>
+              </button>
+            </td>
+            <td>
+              <button class="board__button board__button_edit"></button>
+            </td>
+            <td>
+              <button class="board__button board__button_delete"></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">246016548</th>
+            <td>Навигационная система Soundmax</td>
+            <td>Техника для дома</td>
+            <td>шт</td>
+            <td>5</td>
+            <td>$100</td>
+            <td>$500</td>
+            <td>
+              <button class="board__button board__button_image"></button>
+              </button>
+            </td>
+            <td>
+              <button class="board__button board__button_edit"></button>
+            </td>
+            <td>
+              <button class="board__button board__button_delete"></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">246016548</th>
+            <td>Навигационная система Soundmax</td>
+            <td>Техника для дома</td>
+            <td>шт</td>
+            <td>5</td>
+            <td>$100</td>
+            <td>$500</td>
+            <td>
+              <button class="board__button board__button_image"></button>
+              </button>
+            </td>
+            <td>
+              <button class="board__button board__button_edit"></button>
+            </td>
+            <td>
+              <button class="board__button board__button_delete"></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="tab__footer">
+        <div class="tab__show">
+          <label for="countShow">Показывать на странице:</label>
+          <select class="tab__select" name="countShow" id="countShow">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+
+        <div class="tab__pagination">
+          <p class="tab__paragraph">1-10 of 276</p>
+        </div>
+
+        <div class="tab__switch">
+          <button class="tab__prev" type="button">
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M5.79971 1.10636C6.42812 0.51287 5.43313 -0.426818 4.80472 0.216126L0.196378 4.51891C-0.0654595 4.7662 -0.0654595 5.21131 0.196378 5.4586L4.80472 9.81084C5.43313 10.4043 6.42812 9.46464 5.79971 8.87115L1.71504 5.01348L5.79971 1.10636Z"
+                fill="#6E6893" />
+            </svg>
+          </button>
+          <button class="tab__next" type="button">
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.200293 1.10636C-0.428118 0.51287 0.566865 -0.426818 1.19528 0.216126L5.80362 4.51891C6.06546 4.7662 6.06546 5.21131 5.80362 5.4586L1.19528 9.81084C0.566865 10.4043 -0.428118 9.46464 0.200293 8.87115L4.28496 5.01348L0.200293 1.10636Z"
+                fill="#6E6893" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
