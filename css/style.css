@@ -1,4 +1,4 @@
-@import '/css/modules/normalize.css';
-@import '/css/modules/reset.css';
-@import '/css/modules/var.css';
-@import '/css/modules/formcard.css';
+@import 'modules/normalize.css';
+@import 'modules/reset.css';
+@import 'modules/var.css';
+@import 'modules/formcard.css';
