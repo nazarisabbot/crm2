@@ -339,8 +339,8 @@
 }
 
 .form-card__name, .form-card__number {
-  display: none;
-  /* display: inline-block; */
+  /* display: none; */
+  display: inline-block;
 }
 
 .form-card__close {
