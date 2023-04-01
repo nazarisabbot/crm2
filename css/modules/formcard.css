@@ -129,8 +129,13 @@
   background-color: var(--white-color);
 }
 
-.board__body > tr {
+.board__list {
   height: 60px;
+}
+
+.board__list > td:nth-child(-n+2) {
+  padding-left: 15px;
+  text-align: left;
 }
 
 .board__button {
