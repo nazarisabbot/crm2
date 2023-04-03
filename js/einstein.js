@@ -1,6 +1,7 @@
-/* const myWeight = 120;
-const speedLight = 299792458;
+const myWeight = 120;
+const speedLight = "3e8";
+const speedParse = parseInt(speedLight, 16);
 
-const result = myWeight * speedLight * 2;
+const result = myWeight * speedParse * 2;
 
-console.log(result); */
+console.log(result);
