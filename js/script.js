@@ -14,11 +14,11 @@ const openForm = document.getElementById("openForm");
 const blockForm = document.querySelector(".form");
 
 closeForm.addEventListener("click", () => {
-  blockForm.style.display = "none";
+  blockForm.classList.remove("form_open");
 });
 
 openForm.addEventListener("click", () => {
-  blockForm.style.display = "flex";
+  blockForm.classList.add("form_open");
 });
 
 // Get Elements
