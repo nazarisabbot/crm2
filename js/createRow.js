@@ -97,5 +97,3 @@ const renderGoods = (arr) => {
 };
 
 renderGoods(goods);
-
-// list.prepend(createRow(test[0]));
