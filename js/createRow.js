@@ -65,18 +65,18 @@ const goods = [
 
 const list = document.querySelector(".board__body");
 
-const createRow = (obj) => {
+const createRow = ({ id, title, category, units, count, price }) => {
   const tr = document.createElement("tr");
   tr.className = "board__list";
 
   const tds = `
-  <td class="board__id">${obj.id}</td>
-  <td class="board__name">${obj.title}</td>
-  <td class="board__category">${obj.category}</td>
-  <td class="board__unit">${obj.units}</td>
-  <td class="board__quantity">${obj.count}</td>
-  <td class="board__price">${obj.price}</td>
-  <td class="board__total">${obj.price * obj.count}</td>
+  <td class="board__id">${id}</td>
+  <td class="board__name">${title}</td>
+  <td class="board__category">${category}</td>
+  <td class="board__unit">${units}</td>
+  <td class="board__quantity">${count}</td>
+  <td class="board__price">${price}</td>
+  <td class="board__total">${price * count}</td>
   <td>
     <button class="board__button board__button_noimage"></button>
     <button class="board__button board__button_edit"></button>
