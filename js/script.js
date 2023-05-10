@@ -12,8 +12,17 @@ closeError.addEventListener("click", () => {
 const closeForm = document.getElementById("closeForm");
 const openForm = document.getElementById("openForm");
 const blockForm = document.querySelector(".form");
+const formContainer = document.querySelector(".form-container");
 
 closeForm.addEventListener("click", () => {
+  blockForm.classList.remove("form_open");
+});
+
+formContainer.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+blockForm.addEventListener("click", () => {
   blockForm.classList.remove("form_open");
 });
 
