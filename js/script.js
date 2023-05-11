@@ -14,16 +14,12 @@ const openForm = document.getElementById("openForm");
 const blockForm = document.querySelector(".form");
 const formContainer = document.querySelector(".form-container");
 
-closeForm.addEventListener("click", () => {
-  blockForm.classList.remove("form_open");
-});
+blockForm.addEventListener("click", (e) => {
+  const target = e.target;
 
-formContainer.addEventListener("click", (e) => {
-  e.stopPropagation();
-});
-
-blockForm.addEventListener("click", () => {
-  blockForm.classList.remove("form_open");
+  if (target === blockForm || target.classList.contains("form-card__form")) {
+    blockForm.classList.remove("form_open");
+  }
 });
 
 openForm.addEventListener("click", () => {

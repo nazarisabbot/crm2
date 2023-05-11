@@ -97,3 +97,21 @@ const renderGoods = (arr) => {
 };
 
 renderGoods(goods);
+
+list.addEventListener("click", (e) => {
+  const target = e.target;
+
+  if (target.closest(".board__button_delete")) {
+    const elemForDel = e.target.closest(".board__list");
+    const idForDel = +elemForDel.firstElementChild.textContent;
+
+    for (let i = 0; i < goods.length - 1; i++) {
+      if (goods[i].id === idForDel) {
+        goods.splice(i, 1);
+      }
+    }
+
+    elemForDel.remove();
+    console.log(goods);
+  }
+});
