@@ -38,8 +38,8 @@
           </p>
           <button class="form-card__close form-card__form" id="closeForm" type="button"></button>
         </div>
-        <form class="form-card__form" action="https://jsonplaceholder.typicode.com/posts" method="POST" target="_blank">
-
+        <form class="form-card__form" id="form">
+          <!-- action="https://jsonplaceholder.typicode.com/posts" method="POST" target="_blank" -->
 
           <fieldset class="form-card__body">
 
@@ -55,10 +55,10 @@
 
               <fieldset class="form-card__custom">
                 <fieldset class="form-card__custom-checkbox">
-                  <input class="form-card__checkbox" id="discount" name="discount" type="checkbox" required>
+                  <input class="form-card__checkbox" id="discount" name="discount" type="checkbox">
                   <label class="form-card__label" for="discount">дисконт</label>
                   <input class="form-card__input form-card__input_commit" id="commit" name="commit" type="text"
-                    required>
+                    disabled="disabled">
                 </fieldset>
               </fieldset>
 
@@ -76,13 +76,16 @@
                 type="text" required>
 
               <label class="form-card__label" for="count">количество</label>
-              <input class="form-card__input" id="count" name="count" type="number" min="0" required>
-
-              <label class="form-card__label" for="price">цена</label>
-              <input class="form-card__input form-card__input_margin" id="price" name="price" type="number" min="0"
+              <input class="form-card__input form-card__input_count" id="count" name="count" type="number" min="0"
                 required>
 
-              <button class="form-card__add">Добавить изображение</button>
+              <label class="form-card__label" for="price">цена</label>
+              <input class="form-card__input form-card__input_margin form-card__input_price" id="price" name="price"
+                type="number" min="0" required>
+
+              <label class="form-card__add" for="file">Добавить изображение
+                <input class="form-card__addfile" type="file" name="file" id="file">
+              </label>
 
               <fieldset class="form-card__red">
                 <p class="form-card__lemit form-card__lemit_right">
@@ -93,13 +96,13 @@
 
             <fieldset class="form-card__product">
               <div class="form-card__delete"><span></span></div>
-              <img class="form-card__image" src="img/image_01.png" alt="Фото добавляемого товара">
+              <img class="form-card__image" src="" alt="Фото добавляемого товара">
             </fieldset>
 
           </fieldset>
 
           <fieldset class="form-card__total form-card__total_form">
-            <p class="form-card__count">Итоговая стоимость: <span>$ 900.0</span></p>
+            <p class="form-card__count">Итоговая стоимость: <span class="form-card_innertotal">$ 0</span></p>
             <button class="form-card__btn" type="submit">
               <span class="form-card__submit">добавить товар</span>
             </button>
