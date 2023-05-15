@@ -533,6 +533,10 @@
   border-radius: 5px;
 }
 
+.form-card__input_commit {
+  background-color: var(--active-color);
+}
+
 .form-card__custom-checkbox input[type="checkbox"]:checked + label::before {
   background-image: url("/img/tick.svg");
   background-repeat: no-repeat;
@@ -540,7 +544,7 @@
 }
 
 .form-card__custom-checkbox input[type="checkbox"]:checked ~ input[type="text"] {
-  background-color: var(--active-color);
+  background-color: var(--background-color);
 }
 
 .form-card__input_commit {
