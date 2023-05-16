@@ -1,0 +1,58 @@
+export const goods = [
+  {
+    id: 253842678,
+    title: 'Смартфон Xiaomi 11T 8/128GB',
+    price: 27000,
+    description: 'Смартфон Xiaomi 11T – это представитель флагманской линейки.',
+    category: 'mobile-phone',
+    discont: false,
+    count: 3,
+    units: 'шт',
+    images: {
+      small: 'img/smrtxiaomi11t-m.jpg',
+      big: 'img/smrtxiaomi11t-b.jpg',
+    },
+  },
+  {
+    id: 296378448,
+    title: 'Радиоуправляемый автомобиль Cheetan',
+    price: 4000,
+    description: 'Внедорожник на дистанционном управлении.',
+    category: 'toys',
+    discont: 5,
+    count: 1,
+    units: 'шт',
+    images: {
+      small: 'img/cheetancar-m.jpg',
+      big: 'img/cheetancar-b.jpg',
+    },
+  },
+  {
+    id: 215796548,
+    title: 'ТВ приставка MECOOL KI',
+    price: 12400,
+    description: 'Быстрый и умный MECOOL KI PRO, прекрасно спроектированный',
+    category: 'tv-box',
+    discont: 15,
+    count: 4,
+    units: 'шт',
+    images: {
+      small: 'img/tvboxmecool-m.jpg',
+      big: 'img/tvboxmecool-b.jpg',
+    },
+  },
+  {
+    id: 246258248,
+    title: 'Витая пара PROConnect 01-0043-3-25',
+    price: 22,
+    description: 'Витая пара Proconnect 01-0043-3-25 является сетевым кабелем.',
+    category: 'cables',
+    discont: false,
+    count: 420,
+    units: 'v',
+    images: {
+      small: 'img/lan_proconnect43-3-25.jpg',
+      big: 'img/lan_proconnect43-3-25-b.jpg',
+    },
+  },
+];
