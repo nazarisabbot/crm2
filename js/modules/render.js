@@ -2,7 +2,7 @@ import declarationOfVar from './declarationOfVar.js';
 
 const {list} = declarationOfVar;
 
-export const createRow = ({id, title, category, units, count, price}) => {
+export const createRow = ({id, title, category, units, count, price, url}) => {
   const tr = document.createElement('tr');
   tr.className = 'board__list';
 
@@ -15,7 +15,8 @@ export const createRow = ({id, title, category, units, count, price}) => {
   <td class="board__price">${price}</td>
   <td class="board__total">${price * count}</td>
   <td>
-    <button class="board__button board__button_noimage"></button>
+    <button class="board__button board__button_image"
+    data-pic='file:///E:/METHED/module_06/goods_img/monkey.jpg'></button>
     <button class="board__button board__button_edit"></button>
     <button class="board__button board__button_delete"></button>
   </td>`;

@@ -4,6 +4,7 @@ import declarationOfVar from './modules/declarationOfVar.js';
 import {totalGoods} from './modules/totalGoods.js';
 import formControl from './modules/formControl.js';
 import switchScript from './modules/switchScript.js';
+import {showImage} from './service/showImage.js';
 
 const {
   form,
@@ -44,6 +45,10 @@ const init = () => {
   addNewRow(form, goods, renderGoods, windowTotalMount, totalGoods, blockForm);
   totalInnerGoods(innerTotal, form);
   controlSizeImage(buttonAddFile, previewImage);
+  /* End */
+
+  /* Service */
+  showImage(list);
   /* End */
 
   /* Switch function */
