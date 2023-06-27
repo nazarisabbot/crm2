@@ -5,8 +5,8 @@ export const showImage = (elem) => {
     if (target.closest('.board__button_image')) {
       const url = target.getAttribute('data-pic');
 
-      let h = screen.height;
-      let w = screen.width;
+      const h = screen.height;
+      const w = screen.width;
 
       const win = window.open(
         'about: blank',
