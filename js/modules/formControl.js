@@ -33,7 +33,7 @@ const checkedControl = (elemForm, inputCommit) => {
   });
 };
 
-const addNewRow = (elemForm, data, renderFoo, wTotal, totalFoo, blockf) => {
+const addNewRow = (elemForm, renderFoo, wTotal, totalFoo, blockf) => {
   elemForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -75,6 +75,54 @@ const addNewRow = (elemForm, data, renderFoo, wTotal, totalFoo, blockf) => {
     elemForm.reset();
 
     blockf.classList.remove('form_open');
+  });
+};
+
+const addNewRowFromApi = (elemForm, requestApi, url, renderFoo, errorFoo) => {
+  const addNewGoodApi = requestApi();
+
+  elemForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const objForm = Object.fromEntries(formData);
+
+    const {
+      category,
+      commit: discont,
+      count,
+      description,
+      name: title,
+      measurements: units,
+      price,
+      file,
+    } = objForm;
+
+    const newObj = {
+      title,
+      price: Number(price),
+      description,
+      category,
+      discont: +discont,
+      count: +count,
+      units,
+      images: {
+        small: file.name,
+        big: file.name,
+      },
+    };
+
+    addNewGoodApi.post(
+      url,
+      newObj,
+      {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+      renderFoo,
+      errorFoo,
+    );
+
+    elemForm.reset();
   });
 };
 
@@ -129,6 +177,7 @@ export default {
   deleteRow,
   checkedControl,
   addNewRow,
+  addNewRowFromApi,
   totalInnerGoods,
   controlSizeImage,
 };

@@ -9,6 +9,8 @@ const closeError = document.getElementById('closeError');
 const blockError = document.querySelector('.form-card__error');
 const openForm = document.getElementById('openForm');
 const blockForm = document.querySelector('.form');
+const boardTotal = document.querySelectorAll('.board__total');
+const API_GOODS = 'https://invited-comfortable-ox.glitch.me/api/goods';
 
 export default {
   form,
@@ -22,4 +24,6 @@ export default {
   blockError,
   openForm,
   blockForm,
+  API_GOODS,
+  boardTotal,
 };
