@@ -52,7 +52,7 @@ const addNewRow = (elemForm, renderFoo, wTotal, totalFoo, blockf) => {
     } = objForm;
 
     const newObj = {
-      id: Date.now(),
+      id: Math.random().toString().substring(2, 11),
       title,
       price,
       description,
