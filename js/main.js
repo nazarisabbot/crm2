@@ -26,7 +26,6 @@ const {
 const {
   deleteRow,
   checkedControl,
-  addNewRow,
   addNewRowFromApi,
   totalInnerGoods,
   controlSizeImage,
