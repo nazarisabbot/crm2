@@ -1,3 +1,6 @@
+const body = document.body;
+const tabSubmit = document.querySelector('.tab__submit');
+const formContainer = document.querySelector('.form-container');
 const form = document.getElementById('form');
 const commitArea = document.querySelector('.form-card__input_commit');
 const buttonAddFile = document.querySelector('.form-card__add');
@@ -13,6 +16,9 @@ const boardTotal = document.querySelectorAll('.board__total');
 const API_GOODS = 'https://invited-comfortable-ox.glitch.me/api/goods';
 
 export default {
+  body,
+  tabSubmit,
+  formContainer,
   form,
   commitArea,
   buttonAddFile,

@@ -8,112 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <script type="module" src="js/main.js"></script>
   <title>Document</title>
 </head>
 
 <body>
-  <div class="form">
-    <div class="form-container">
-      <section class="form-card">
-        <div class="form-card__error">
-          <button class="form-card__close" id="closeError" type="button"></button>
-          <div class="form-card__contain">
-            <img class="form-card__redcross" src="img/error_cross.png" width="90" height="90"
-              alt="Крассный крест означающий ошибку">
-            <p>Что-то пошло не так</p>
-          </div>
-        </div>
-        <div class="form-card__title form-card__title_form">
-          <h2 class="form-card__action">добавить товар</h2>
-          <p class="form-card__id">
-            <span class="form-card__name">
-              id:
-            </span>
-            <span class="form-card__number">
-              201910241
-            </span>
-          </p>
-          <button class="form-card__close form-card__form" id="closeForm" type="button"></button>
-        </div>
-        <form class="form-card__form" id="form">
-          <!-- action="https://jsonplaceholder.typicode.com/posts" method="POST" target="_blank" -->
-
-          <fieldset class="form-card__body">
-
-            <fieldset class="form-card__left">
-              <label class="form-card__label" for="name">наименование</label>
-              <input class="form-card__input" id="name" name="name" type="text" required>
-
-              <label class="form-card__label" for="category">категория</label>
-              <input class="form-card__input" id="category" name="category" type="text" required>
-
-              <label class="form-card__label" for="measurements">eдиницы измерения</label>
-              <input class="form-card__input" id="measurements" name="measurements" type="text" required>
-
-              <fieldset class="form-card__custom">
-                <fieldset class="form-card__custom-checkbox">
-                  <input class="form-card__checkbox" id="discount" name="discount" type="checkbox">
-                  <label class="form-card__label" for="discount">дисконт</label>
-                  <input class="form-card__input form-card__input_commit" id="commit" name="commit" type="text"
-                    disabled="disabled">
-                </fieldset>
-              </fieldset>
-
-              <fieldset class="form-card__red">
-                <p class="form-card__lemit form-card__lemit_left">
-                  Изображение не должно превышать размер 1 Мб
-                </p>
-              </fieldset>
-            </fieldset>
-
-
-            <fieldset class="form-card__right">
-              <label class="form-card__label" for="description">описание</label>
-              <input class="form-card__input form-card__input_description" id="description" name="description"
-                type="text" required>
-
-              <label class="form-card__label" for="count">количество</label>
-              <input class="form-card__input form-card__input_count" id="count" name="count" type="number" min="0"
-                required>
-
-              <label class="form-card__label" for="price">цена</label>
-              <input class="form-card__input form-card__input_margin form-card__input_price" id="price" name="price"
-                type="number" min="0" required>
-
-              <label class="form-card__add" for="file">Добавить изображение
-                <input class="form-card__addfile" type="file" name="file" id="file">
-              </label>
-
-              <fieldset class="form-card__red">
-                <p class="form-card__lemit form-card__lemit_right">
-                  Изображение не должно превышать размер 1 Мб
-                </p>
-              </fieldset>
-            </fieldset>
-
-            <fieldset class="form-card__product">
-              <div class="form-card__delete"><span></span></div>
-              <img class="form-card__image" src="" alt="Фото добавляемого товара">
-            </fieldset>
-
-          </fieldset>
-
-          <fieldset class="form-card__total form-card__total_form">
-            <p class="form-card__count">Итоговая стоимость: <span class="form-card_innertotal">$ 0</span></p>
-            <button class="form-card__btn" type="submit">
-              <span class="form-card__submit">добавить товар</span>
-            </button>
-          </fieldset>
-
-        </form>
-
-      </section>
-    </div>
-
-  </div>
-
   <div class="container">
     <div class="form-card form-card_header">
       <div class="form-card__title form-card__title_tab">

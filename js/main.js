@@ -1,4 +1,3 @@
-import {goods} from './modules/data.js';
 import {renderGoods} from './modules/render.js';
 import declarationOfVar from './modules/declarationOfVar.js';
 import {totalGoods} from './modules/totalGoods.js';
@@ -6,8 +5,12 @@ import formControl from './modules/formControl.js';
 import switchScript from './modules/switchScript.js';
 import {serverHttpRequest} from './modules/serverHttpRequest.js';
 import {errorWindow} from './modules/errorWindow.js';
+import {handlerModalWindow} from './modules/handlerModalWindow.js';
+import {createFormMarkup} from './modules/createFormMarkup.js';
 
 const {
+  tabSubmit,
+  formContainer,
   form,
   commitArea,
   buttonAddFile,
@@ -39,25 +42,9 @@ const init = () => {
   myHttp.get(API_GOODS, renderGoods, errorWindow, totalGoods);
   /* End */
 
-  /* Form control */
-  deleteRow(list, goods, windowTotalMount, totalGoods);
-  checkedControl(form, commitArea);
-  addNewRowFromApi(
-    form,
-    serverHttpRequest,
-    API_GOODS,
-    renderGoods,
-    errorWindow,
-  );
-  totalInnerGoods(innerTotal, form);
-  controlSizeImage(buttonAddFile, previewImage);
-  /* End */
-
-  /* Switch function */
-  closeErrorWindowFoo(closeError, blockError);
-  closeFormFoo(blockForm);
-  openFormFoo(openForm, blockForm);
-  /* End */
+  /* Open modal function */
+  handlerModalWindow(createFormMarkup);
+  /* end */
 };
 
 init();

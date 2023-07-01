@@ -21,63 +21,6 @@ const deleteRow = (mainElem, data, elemForTotal, totalFoo) => {
   });
 };
 
-const checkedControl = (elemForm, inputCommit) => {
-  elemForm.discount.addEventListener('change', () => {
-    if (elemForm.discount.checked === false) {
-      inputCommit.setAttribute('disabled', 'disabled');
-    }
-
-    if (elemForm.discount.checked === true) {
-      inputCommit.removeAttribute('disabled');
-    }
-  });
-};
-
-const addNewRow = (elemForm, renderFoo, wTotal, totalFoo, blockf) => {
-  elemForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(e.target);
-    const objForm = Object.fromEntries(formData);
-
-    const {
-      category,
-      commit: discont,
-      count,
-      description,
-      name: title,
-      measurements: units,
-      price,
-      file,
-    } = objForm;
-
-    const newObj = {
-      id: Math.random().toString().substring(2, 11),
-      title,
-      price,
-      description,
-      category,
-      discont,
-      count,
-      units,
-      images: {
-        small: file.name,
-        big: file.name,
-      },
-    };
-
-    data.push(newObj);
-
-    renderFoo([newObj]);
-
-    wTotal.textContent = `$ ${totalFoo(data).toLocaleString()}`;
-
-    elemForm.reset();
-
-    blockf.classList.remove('form_open');
-  });
-};
-
 const addNewRowFromApi = (elemForm, requestApi, url, renderFoo, errorFoo) => {
   const addNewGoodApi = requestApi();
 
@@ -175,8 +118,6 @@ const controlSizeImage = (mainButton, preview) => {
 
 export default {
   deleteRow,
-  checkedControl,
-  addNewRow,
   addNewRowFromApi,
   totalInnerGoods,
   controlSizeImage,

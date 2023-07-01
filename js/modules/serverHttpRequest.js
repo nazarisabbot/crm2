@@ -1,6 +1,6 @@
 import declarationOfVar from './declarationOfVar.js';
 
-const {windowTotalMount, blockForm, blockError} = declarationOfVar;
+const {windowTotalMount} = declarationOfVar;
 
 let totalPrice = null;
 
@@ -37,12 +37,14 @@ export function serverHttpRequest() {
         xhr.addEventListener('load', () => {
           if (Math.floor(xhr.status / 2) !== 100) {
             cbError(`Error. Status code: ${xhr.status}`);
+            const blockError = document.querySelector('.form-card__error');
             blockError.classList.add('active');
             return;
           }
           const response = JSON.parse(xhr.responseText);
           cb([response]);
-          blockForm.classList.remove('form_open');
+          document.body.firstChild.remove();
+
           let digitsTotalPrice = Number(totalPrice);
           digitsTotalPrice += response.count * response.price;
           windowTotalMount.textContent = digitsTotalPrice.toLocaleString();
