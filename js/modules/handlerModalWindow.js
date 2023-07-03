@@ -26,6 +26,7 @@ export const handlerModalWindow = (createFoo) => {
               target.closest('.form-card__close')
             ) {
               fooElement.remove();
+              linkElement.remove();
             }
           });
 
@@ -48,6 +49,8 @@ export const handlerModalWindow = (createFoo) => {
           const data = await fetch(`${API_GOODS}/${idForDel}`);
           const user = await data.json();
 
+          console.log(user);
+
           const fooElementEdit = createFoo(user);
           body.prepend(fooElementEdit);
 
@@ -62,6 +65,7 @@ export const handlerModalWindow = (createFoo) => {
               target.closest('.form-card__close')
             ) {
               fooElementEdit.remove();
+              linkElement.remove();
             }
           });
 
