@@ -49,8 +49,9 @@ export const createFormMarkup = (data = {}) => {
   const actionHeading = createFormElement(
     'h2',
     'form-card__action',
-    'добавить товар',
+    title ? 'редактирование товара' : 'добавить товар',
   );
+
   const idParagraph = createFormElement('p', 'form-card__id');
   const idNameSpan = createFormElement('span', 'form-card__name');
   idNameSpan.textContent = 'id:';
