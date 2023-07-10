@@ -1,4 +1,8 @@
 import formControl from './formControl.js';
+import {
+  restrictInputToCyrillicAndSpace,
+  restrictInputToDigits,
+} from '../service/restrictInput.js';
 
 const {totalInnerGoods, controlSizeImage} = formControl;
 
@@ -88,6 +92,10 @@ export const createFormMarkup = (data = {}) => {
   nameInput.required = true;
   nameInput.value = title;
 
+  nameInput.addEventListener('input', (e) => {
+    restrictInputToCyrillicAndSpace(e.target);
+  });
+
   const categoryLabel = createFormElement(
     'label',
     'form-card__label',
@@ -102,6 +110,10 @@ export const createFormMarkup = (data = {}) => {
   categoryInput.required = true;
   categoryInput.value = category;
 
+  categoryInput.addEventListener('input', (e) => {
+    restrictInputToCyrillicAndSpace(e.target);
+  });
+
   const measurementsLabel = createFormElement(
     'label',
     'form-card__label',
@@ -115,6 +127,10 @@ export const createFormMarkup = (data = {}) => {
   measurementsInput.type = 'text';
   measurementsInput.required = true;
   measurementsInput.value = units;
+
+  measurementsInput.addEventListener('input', (e) => {
+    restrictInputToCyrillicAndSpace(e.target);
+  });
 
   const formCardCustomFieldset = createFormElement(
     'fieldset',
@@ -146,6 +162,10 @@ export const createFormMarkup = (data = {}) => {
   commitInput.name = 'commit';
   commitInput.type = 'text';
   commitInput.disabled = true;
+
+  commitInput.addEventListener('input', (e) => {
+    restrictInputToDigits(e.target);
+  });
 
   discountCheckbox.addEventListener('change', () => {
     if (discountCheckbox.checked === false) {
@@ -202,6 +222,12 @@ export const createFormMarkup = (data = {}) => {
   descriptionInput.required = true;
   descriptionInput.value = description;
 
+  descriptionInput.setAttribute('minlength', 80);
+
+  descriptionInput.addEventListener('input', (e) => {
+    restrictInputToCyrillicAndSpace(e.target);
+  });
+
   const countLabel = createFormElement(
     'label',
     'form-card__label',
@@ -220,6 +246,10 @@ export const createFormMarkup = (data = {}) => {
   countInput.required = true;
   countInput.value = count;
 
+  countInput.addEventListener('input', (e) => {
+    restrictInputToDigits(e.target);
+  });
+
   const priceLabel = createFormElement('label', 'form-card__label', 'цена');
   priceLabel.setAttribute('for', 'price');
 
@@ -227,12 +257,17 @@ export const createFormMarkup = (data = {}) => {
     'input',
     'form-card__input form-card__input_margin form-card__input_price',
   );
+
   priceInput.id = 'price';
   priceInput.name = 'price';
   priceInput.type = 'number';
   priceInput.min = '0';
   priceInput.required = true;
   priceInput.value = price;
+
+  priceInput.addEventListener('input', (e) => {
+    restrictInputToDigits(e.target);
+  });
 
   const addImageLabel = createFormElement(
     'label',
